@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+        <title>MovieChoice</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+        <header>
+            <img src="icon.png" alt="PopChoice logo">
+            <h1>MovieChoice</h1>
+        </header>
+        
+        <main>
+            <form id="form">
+
+                <label for="movie" >What’s your favorite movie and why?</label>
+                <textarea id="movie" name="movie" required></textarea>
+                
+                <fieldset>
+                    <legend>Are you in the mood for something new or classic?</legend>
+                    
+                    <label for="new">
+                        <input required type="radio" name="era" id="new" value="new">
+                        New
+                    </label>
+                    
+                    <label for="classic">
+                        <input type="radio" name="era" id="classic" value="classic">
+                        Classic
+                    </label>
+                </fieldset>
+                
+                
+                <fieldset>
+                    <legend>What are you in the mood for?</legend>
+                    <label for="fun">
+                        <input required type="radio" name="genre" id="fun" value="fun">
+                        Fun
+                    </label>
+                    
+                    <label for="serious">
+                        <input type="radio" name="genre" id="serious" value="serious">
+                        Serious
+                    </label>
+                    
+                    <label for="inspiring">
+                        <input type="radio" name="genre" id="inspiring" value="inspiring">
+                        Inspiring
+                    </label>
+                    
+                    <label for="scary">
+                        <input type="radio" name="genre" id="scary" value="scary">
+                        Scary
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>How long should it be?</legend>
+                    <label for="short">
+                         <input required type="radio" name="length" id="short" value="short">
+                        less than 90 mins
+                    </label>
+
+                    <label for="medium">
+                         <input type="radio" name="length" id="medium" value="medium">
+                        Average 90-120 mins
+                    </label>
+
+                    <label for="long">
+                         <input type="radio" name="length" id="long" value="long">
+                        longer than 120mins
+                    </label>
+
+                </fieldset>
+                
+                <button id="go-btn" type="submit">Let's Go</button>
+                    
+            </form>
+
+            <div id="result" class="hidden">
+                <h2 id="result-title"></h2>
+                <img id="result-poster" src="" alt="Movie poster">
+                <p id="result-explanation"></p>
+                <p id="result-watch"></p>
+                <button id="reset-btn">Start again</button>
+            </div>
+
+
+
+        </main>
+        
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
