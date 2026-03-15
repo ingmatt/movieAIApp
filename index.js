@@ -1,4 +1,3 @@
-const API_KEY = "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"
 
 const form = document.getElementById("form")
 const result = document.getElementById("result")
@@ -40,17 +39,12 @@ async function submitForm(event) {
     goBtn.disabled = true
 
     try {
-        const response = await fetch("https://api.anthropic.com/v1/messages", {
+        const response = await fetch("/api/recommend", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "x-api-key": API_KEY,
-                "anthropic-version": "2023-06-01",
-                "anthropic-dangerous-direct-browser-access": "true"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "claude-haiku-4-5-20251001",
-                max_tokens: 1024,
                 messages: [
                     { role: "user", content: prompt }
                 ]
